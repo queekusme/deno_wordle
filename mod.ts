@@ -29,7 +29,7 @@ const matchWords = (guess: string, wordOfTheDay: string): IMatch[] =>
             letter: gChar,
             placement: wordOfTheDay.length >= (i + 1) && wChar == gChar
                 ? MatchPlacement.Good
-                : (wordOfTheDay.includes(gChar) || !onlyOneCopy
+                : (wordOfTheDay.includes(gChar) && !onlyOneCopy
                     ? MatchPlacement.Position
                     : MatchPlacement.Bad)
         });
