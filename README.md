@@ -9,7 +9,7 @@ To set this up
 
 ## To Play
 To play the game:
-1. Run the following command `deno run --allow-read --allow-write --allow-env mod.ts <guess>` where <guess> is replaced with your word guess.
+1. Run the following command `deno run --allow-read --allow-write --allow-env mod.ts <guess>` where &lt;guess&gt; is replaced with your word guess.
 
 ## Limitations
 1. there is no word limit, guess words as long as you wish, recommend you start with words 5 characters in length.
