@@ -42,7 +42,6 @@ const renderMatch = (match: IMatch[]): string =>
 {
     let word = "";
 
-
     for(const matchPart of match)
         word += `${matchPart.placement}${matchPart.letter}${resetSequence}`;
 
