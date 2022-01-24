@@ -23,13 +23,12 @@ const matchWords = (guess: string, wordOfTheDay: string): IMatch[] =>
     {
         const gChar = guess.charAt(i);
         const wChar = wordOfTheDay.charAt(i)
-        const onlyOneCopy = wordOfTheDay.split("").lastIndexOf(gChar) === wordOfTheDay.split("").indexOf(gChar);
 
         match.push({
             letter: gChar,
             placement: wordOfTheDay.length >= (i + 1) && wChar == gChar
                 ? MatchPlacement.Good
-                : (wordOfTheDay.includes(gChar) && !onlyOneCopy
+                : (wordOfTheDay.includes(gChar)
                     ? MatchPlacement.Position
                     : MatchPlacement.Bad)
         });
