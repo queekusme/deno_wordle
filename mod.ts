@@ -23,12 +23,14 @@ const matchWords = (guess: string, wordOfTheDay: string): IMatch[] =>
     {
         const gChar = guess.charAt(i);
         const wChar = wordOfTheDay.charAt(i)
+        const countOfGCharInWord = wordOfTheDay.split("").filter((char) => char === gChar).length;
+        const countOfGCharInGuess = guess.split("").filter((char) => char === gChar).length;
 
         match.push({
             letter: gChar,
             placement: wordOfTheDay.length >= (i + 1) && wChar == gChar
                 ? MatchPlacement.Good
-                : (wordOfTheDay.includes(gChar)
+                : (wordOfTheDay.includes(gChar) && countOfGCharInGuess <= countOfGCharInWord
                     ? MatchPlacement.Position
                     : MatchPlacement.Bad)
         });
